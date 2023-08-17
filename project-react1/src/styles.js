@@ -105,5 +105,13 @@ export const Button = styled.button`
     justify-content: center;
     gap: 20px;
     
+
+    &:hover{  
+        opacity: 0.8;
+    }
+
+    &:active{
+        opacity: 0.5; 
+    }
 `;
 
