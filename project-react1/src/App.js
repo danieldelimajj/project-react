@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import People from './assets/people.svg'
 import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
 
 import {
   Container,
@@ -11,16 +12,16 @@ import {
   InputLabel,
   Input,
   Button,
+  User
 } from './styles';
 
 function App() {
-  const users = [
-    { id: Math.random(), name: 'Daniel', age: 27 },
+  const [ users, setUsers ] = useState([]);
+   
 
-    { id: Math.random(), name: 'Leticia', age: 25 },
-
-    
-  ];
+function addNewUser(){
+  setUsers([{id: Math.random(), name:'Daniel, age: 27'}])
+};
 
   return (
     <Container>
@@ -34,17 +35,18 @@ function App() {
         <InputLabel>Idade</InputLabel>
         <Input placeholder='Idade' />
 
-        <Button>Cadastrar <img alt='seta' src={Arrow}></img></Button>
+        <Button onClick={addNewUser}>Cadastrar <img alt='seta' src={Arrow}></img></Button>
 
 
         <ul>
-          {users.map(user => (
-            <li key={user.id}>
-              {user.name} - {user.age}
-            </li>
+          {users.map((user) => (
+            <User key={user.id}>
+              <p>{user.name}</p>  
+              <p>{user.age}</p>
+              <button><img src={Trash} alt='Lata de lixo'/></button>
+              </ User>            
 
-          ))
-          }
+          )) }
         </ul>
       </ContainerItens>
     </Container>

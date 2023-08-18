@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Background from './assets/background1.svg'
 
+
 export const Container = styled.div`
   background: url('${Background}');
   background-size: cover;
@@ -113,5 +114,42 @@ export const Button = styled.button`
     &:active{
         opacity: 0.5; 
     }
+`;
+
+export const User = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+    
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    margin-bottom: 34px;
+
+    width: 342px;
+    height: 58px;
+
+
+   p {
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+   }
+
+
+   button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin-right: 25px;
+   }
 `;
 
