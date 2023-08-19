@@ -17,11 +17,21 @@ import {
 
 function App() {
   const [ users, setUsers ] = useState([]);
+  const [name, setName] = useState();
+  const [age, setAge] = useState();
    
 
 function addNewUser(){
-  setUsers([{id: Math.random(), name:'Daniel, age: 27'}])
-};
+  setUsers([...users,{id: Math.random(), name, age}])
+}; //Adiciona mais de um usuário ao preencher o formulário (spread operator)
+
+function changeInputName(event) {
+  setName(event.target.value)
+}
+
+function changeInputAge(event) {
+  setAge(event.target.value)
+}
 
   return (
     <Container>
@@ -30,10 +40,10 @@ function addNewUser(){
         <H1>Olá!</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input placeholder='Nome' />
+        <Input onChange={changeInputName} placeholder='Nome' />
 
         <InputLabel>Idade</InputLabel>
-        <Input placeholder='Idade' />
+        <Input onChange={changeInputAge} placeholder='Idade' />
 
         <Button onClick={addNewUser}>Cadastrar <img alt='seta' src={Arrow}></img></Button>
 
